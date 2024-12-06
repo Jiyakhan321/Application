@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-section">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <span id="error-message"></span>
+    </div>
+
+    <div id="admin-dashboard" style="display: none;">
+        <h2>Admin Dashboard</h2>
+        <button onclick="logout()">Logout</button>
+        <h3>Add New Student</h3>
+        <input type="email" id="new-student-email" placeholder="Student Email">
+        <button onclick="addStudent()">Add Student</button>
+        <h3>Update Institute Location</h3>
+        <button onclick="updateInstituteLocation()">Update Location</button>
+        <h3>Check Students' Attendance</h3>
+        <button onclick="viewAttendance()">View Attendance</button>
+    </div>
+
+    <div id="student-dashboard" style="display: none;">
+        <h2>Student Dashboard</h2>
+        <button onclick="checkInOut('check-in')">Check-in</button>
+        <button onclick="checkInOut('check-out')">Check-out</button>
+        <div id="attendance-status"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
